@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import products from "../data/products.js";
+import { UserDataContext } from "../App.jsx";
+import { useContext } from "react";
 
 function HomePage() {
   const navigate = useNavigate();
+  const context = useContext(UserDataContext);
   return (
     <div>
       <div className="app-wrapper">
