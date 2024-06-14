@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { UserDataContaxt } from "../App";
+import { useContext } from "react";
+
 
 function ViewProductPage() {
+  const context = useContext(UserDataContaxt);
   const navigate = useNavigate();
   return (
     <div>
@@ -11,7 +15,7 @@ function ViewProductPage() {
       </div>
 
       <div className="product-promotion-box">
-        <h2>คุณคือสมาชิกในระดับ (x) ดังนั้นคุณได้สิทธิพิเศษลด 50%</h2>
+        <h2>คุณคือสมาชิกในระดับ {context.user.level} ดังนั้นคุณได้สิทธิพิเศษลด 50%</h2>
         <button onClick={() => alert("🥳🥳🥳🥳")}>กดรับสิทธิ</button>
       </div>
 
